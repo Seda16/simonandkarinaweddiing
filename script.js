@@ -375,7 +375,7 @@ function initCountdown() {
   const secondsElement = document.getElementById("seconds");
 
   // Дата свадьбы - 27 декабря 2025
-  const weddingDate = new Date("2025-12-27T15:00:00").getTime();
+  const weddingDate = new Date("2025-12-26T23:59:59").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
@@ -585,6 +585,76 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Автоматически ставим на паузу при загрузке
+    music.pause();
+  }
+});
+
+// Функция для определения текущей видимой страницы
+function getCurrentPage() {
+  const pages = document.querySelectorAll(".screen");
+  let currentPage = null;
+
+  pages.forEach((page) => {
+    const rect = page.getBoundingClientRect();
+    // Страница считается видимой если она занимает большую часть экрана
+    if (rect.top >= -100 && rect.top <= window.innerHeight / 2) {
+      currentPage = page.id;
+    }
+  });
+
+  return currentPage;
+}
+
+// Функция для управления видимостью кнопки музыки
+function updateMusicButtonVisibility() {
+  const musicToggle = document.getElementById("music-toggle");
+  const currentPage = getCurrentPage();
+
+  if (musicToggle) {
+    // Скрываем кнопку только на первой странице
+    if (currentPage === "home") {
+      musicToggle.style.display = "none";
+    } else {
+      musicToggle.style.display = "block";
+    }
+  }
+}
+
+// Слушаем события
+window.addEventListener("scroll", updateMusicButtonVisibility);
+window.addEventListener("resize", updateMusicButtonVisibility);
+window.addEventListener("load", updateMusicButtonVisibility);
+
+// Инициализация
+document.addEventListener("DOMContentLoaded", function () {
+  updateMusicButtonVisibility();
+
+  // Ваш существующий код для музыки
+  const musicToggle = document.getElementById("music-toggle");
+  const music = document.getElementById("bg-music");
+
+  if (musicToggle && music) {
+    let isPlaying = false;
+
+    musicToggle.addEventListener("click", function () {
+      if (!isPlaying) {
+        music
+          .play()
+          .then(() => {
+            isPlaying = true;
+            this.innerHTML = "⏸︎ Выключить музыку";
+          })
+          .catch((error) => {
+            console.log("Не удалось включить музыку:", error);
+            this.innerHTML = "▶︎ Нажмите еще раз";
+          });
+      } else {
+        music.pause();
+        isPlaying = false;
+        this.innerHTML = "▶︎ Включить музыку";
+      }
+    });
+
     music.pause();
   }
 });

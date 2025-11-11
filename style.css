@@ -487,21 +487,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: -150px 20px 10px 20px; /* сверху 0, снизу 10px */
+  padding: 80px 20px 60px 20px; /* Увеличили верхний отступ, убрали отрицательный */
   font-family: "Great Vibes", cursive;
   text-align: center;
+  min-height: 100vh; /* Добавляем минимальную высоту */
+  height: auto; /* Разрешаем увеличиваться при необходимости */
 }
 
 .dresscode-content {
   max-width: 800px;
   width: 100%;
+  margin-top: 60px; /* Добавляем отступ сверху для всего контента */
 }
 
-/* Заголовок сверху с меньшим отступом */
+/* Заголовок сверху с нормальными отступами */
 .dresscode-title {
   font-size: 5em;
-  margin-top: -120px;
-  margin-bottom: 40px; /* Уменьшили отступ снизу */
+  margin-top: 0; /* Убрали отрицательный отступ */
+  margin-bottom: 60px; /* Увеличили отступ снизу */
   color: #000;
   font-weight: normal;
 }
@@ -510,13 +513,13 @@ body {
 .carousel {
   position: relative;
   max-width: 600px;
-
+  margin: 0 auto 50px auto; /* Центрируем и добавляем отступ снизу */
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
 }
 
+/* Остальные стили карусели остаются без изменений */
 .carousel-container {
   display: flex;
   transition: transform 0.5s ease;
@@ -594,7 +597,7 @@ body {
 
 /* Текст дресс-кода */
 .dresscode-text {
-  margin-top: 50px;
+  margin-top: 30px; /* Уменьшили отступ сверху */
   max-width: 600px;
   margin: 0 auto;
   font-family: "New Standart Old";
@@ -610,16 +613,20 @@ body {
 /* Адаптивность */
 @media (max-width: 768px) {
   .dresscode {
-    padding: 15px 20px; /* Уменьшили на мобильных */
+    padding: 60px 20px 40px 20px; /* Уменьшаем отступы на мобильных */
+  }
+
+  .dresscode-content {
+    margin-top: 40px; /* Меньший отступ на мобильных */
   }
 
   .dresscode-title {
-    font-size: 2.5em;
-    margin-bottom: 15px; /* Еще меньше на мобильных */
+    font-size: 3.5em; /* Немного уменьшаем размер шрифта */
+    margin-bottom: 40px; /* Уменьшаем отступ на мобильных */
   }
 
   .carousel {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
 
   .carousel-image {
@@ -637,6 +644,22 @@ body {
     font-size: 1.3em;
   }
 }
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .dresscode {
+    padding: 40px 15px 30px 15px;
+  }
+
+  .dresscode-content {
+    margin-top: 30px;
+  }
+
+  .dresscode-title {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+  }
+}
 /* Восьмая страница - RSVP */
 .rsvp {
   background: #fffaf7;
@@ -644,13 +667,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 20px 15px;
   text-align: center;
+  min-height: 100vh;
+  height: auto;
 }
 
 .rsvp-content {
   max-width: 400px;
   width: 100%;
+  max-height: 90vh; /* ограничиваем высоту */
+  overflow-y: auto; /* добавляем прокрутку */
+  padding: 20px 10px;
+}
+
+/* Стили для скроллбара */
+.rsvp-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.rsvp-content::-webkit-scrollbar-track {
+  background: rgba(90, 57, 57, 0.1);
+  border-radius: 2px;
+}
+
+.rsvp-content::-webkit-scrollbar-thumb {
+  background: #5a3939;
+  border-radius: 2px;
 }
 
 .rsvp-title {
@@ -719,34 +762,18 @@ body {
 
 .guest-field {
   margin-bottom: 15px;
-  animation: fadeIn 0.3s ease;
+  animation: slideDown 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes slideDown {
   from {
     opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
-}
-
-.add-guest-btn {
-  color: #5a3939;
-  font-size: 1.1em;
-  cursor: pointer;
-  display: inline-block;
-  transition: opacity 0.3s ease;
-  font-family: "Georgia", serif;
-}
-
-.add-guest-btn:hover {
-  opacity: 0.7;
-}
-
-.add-guest-btn.disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
 }
 
 .submit-btn {
@@ -766,7 +793,7 @@ body {
 }
 
 .submit-btn:hover {
-  background: #5a3939;
+  background: #7a5959;
 }
 
 .submit-btn:disabled {
@@ -784,10 +811,14 @@ body {
 
 .form-message.success {
   color: #2d5016;
+  background: rgba(45, 80, 22, 0.1);
+  border-radius: 5px;
 }
 
 .form-message.error {
   color: #c62828;
+  background: rgba(198, 40, 40, 0.1);
+  border-radius: 5px;
 }
 
 /* Счетчик гостей */
@@ -831,35 +862,17 @@ body {
   color: #000;
 }
 
-.additional-guests {
-  margin-top: 20px;
-}
-
-.guest-field {
-  margin-bottom: 15px;
-  animation: fadeIn 0.3s ease;
-}
-
 .guest-field .form-label {
   font-size: 1.1em;
   margin-bottom: 5px;
   color: #666;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Адаптивность */
+/* Адаптивность для маленьких экранов */
 @media (max-width: 768px) {
   .rsvp-content {
     max-width: 320px;
+    padding: 15px 5px;
   }
 
   .rsvp-title {
@@ -868,6 +881,36 @@ body {
 
   .rsvp-subtitle {
     font-size: 1.3em;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-height: 600px) {
+  .rsvp-content {
+    max-height: 85vh;
+    padding: 10px 5px;
+  }
+
+  .rsvp-title {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .rsvp-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .guests-section {
+    margin-bottom: 25px;
+  }
+
+  .guest-field {
+    margin-bottom: 10px;
   }
 }
 
@@ -1004,24 +1047,25 @@ body {
   }
 }
 
+/* Принудительно фиксируем кнопку и управляем видимостью через JS */
 .music-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #5a3939;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 25px;
-  cursor: pointer;
-  z-index: 1000;
-  font-family: "Georgia", serif;
-  font-size: 0.9em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border: none;
-  transition: all 0.3s ease;
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background: #5a3939 !important;
+  color: white !important;
+  padding: 12px 18px !important;
+  border-radius: 25px !important;
+  cursor: pointer !important;
+  z-index: 10000 !important; /* Очень высокий z-index */
+  font-family: "Georgia", serif !important;
+  font-size: 0.9em !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
 }
 
-.music-toggle:hover {
-  background: #7a5959;
-  transform: scale(1.05);
+/* Изначально скрываем кнопку */
+#music-toggle {
+  display: none;
 }
