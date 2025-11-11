@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Симон & Карина</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="home" class="screen">
+      <div class="date">27/12/2025</div>
+      <div class="names">
+        <div>Симон</div>
+        <div>и</div>
+        <div>Карине</div>
+      </div>
+      <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- вторая страница - дорогие родные -->
+    <section id="invitation" class="screen invitation">
+      <div class="invitation-text">
+        <p class="intro">Дорогие родные<br />и близкие!</p>
+
+        <p class="hapiness">
+          Мы с огромным счастьем<br />
+          и трепетом<br />
+          в сердцах приглашаем<br />
+          вас на важное<br />
+          событие в нашей жизни<br />
+          – нашу свадьбу!
+        </p>
+
+        <p class="hapiness">Торжество состоится:</p>
+
+        <p class="date">27/12/2025</p>
+
+        <p class="ending">
+          Ваше присутствие cделает<br />
+          этот день<br />
+          еще более ярким и значимым<br />
+          для нас!
+        </p>
+      </div>
+    </section>
+
+    <!-- Третья страница - фото -->
+    <section id="photo" class="screen photo-section">
+      <div class="photo-container">
+        <img src="assets/images/IMG_16701.1.jpg" class="wedding-photo" />
+      </div>
+    </section>
+
+    <!-- Четвертая страница - Локация -->
+    <section id="location" class="screen location">
+      <div class="location-content">
+        <h2 class="location-title animate-element">Локация</h2>
+
+        <div class="location-description animate-element">
+          <p>
+            Нашу свадьбу мы решили<br />
+            отметить снежной зимой <br />
+            в солнечной Армении.<br />
+            Будем ждать вас в ресторане:
+          </p>
+        </div>
+
+        <div class="restaurant-info animate-element">
+          <h3>Bayazet Hall</h3>
+          <p class="address">
+            по адресу:<br />
+            г. Гавар, улица Саядана, 112/2
+          </p>
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/22EECZY4a3S4D2nz6"
+          class="map-button animate-element"
+          target="_blank"
+        >
+          Маршрут
+        </a>
+      </div>
+    </section>
+
+    <!-- Пятая страница - Видео -->
+    <section id="video" class="screen video-section">
+      <div class="video-content">
+        <div class="video-container">
+          <video controls class="wedding-video" muted playsinline>
+            <source src="assets/images/wedding_video.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Шестая страница - Тайминг -->
+    <section id="timing" class="screen timing">
+      <div class="timing-content">
+        <h2 class="timing-title">Тайминг</h2>
+        <h3 class="timing-subtitle">свадебного дня</h3>
+
+        <div class="timeline">
+          <!-- ПЕРВЫЙ ITEM -->
+          <div class="timeline-item">
+            <div class="time">14:00</div>
+            <div class="event">
+              <strong>Венчание</strong>
+              <span
+                class="plus"
+                data-details='Будем ждать вас в католической церкви "Церковь святого Григора Нарекаци", чтобы разделить этот особый момент в нашей жизни!<br><a href="https://maps.app.goo.gl/e56YmaxiCxJoSnar6" target="_blank" class="church-button">Посмотреть на карте</a>'
+                >+</span
+              >
+            </div>
+            <div class="event-details"></div>
+          </div>
+
+          <!-- ВТОРОЙ ITEM -->
+          <div class="timeline-item">
+            <div class="time">16:30</div>
+            <div class="event">
+              <strong>Сбор гостей</strong>
+              <span
+                class="plus"
+                data-details="Приглашаем вас собраться в ресторане до начала свадебной церемонии. Здесь вы сможете уютно пообщаться, выпить чашечку кофе или прохладительные напитки, а также сделать фотографии на память."
+                >+</span
+              >
+            </div>
+            <div class="event-details"></div>
+          </div>
+
+          <!-- ТРЕТИЙ ITEM -->
+          <div class="timeline-item">
+            <div class="time">17:30</div>
+            <div class="event">
+              <strong>Свадебный банкет</strong>
+              <span
+                class="plus"
+                data-details="Давайте вместе разделим радость торжества и насладимся изысканным свадебным банкетом в уютной атмосфере."
+                >+</span
+              >
+            </div>
+            <div class="event-details"></div>
+          </div>
+
+          <!-- ЧЕТВЕРТЫЙ ITEM -->
+          <div class="timeline-item">
+            <div class="time">00:00</div>
+            <div class="event">
+              <strong>Окончание торжества</strong>
+              <span
+                class="plus"
+                data-details="Завершение праздника и прощание с гостями."
+                >+</span
+              >
+            </div>
+            <div class="event-details"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Седьмая страница - Дресс-код -->
+    <section id="dresscode" class="screen dresscode">
+      <div class="dresscode-content">
+        <!-- Заголовок сверху -->
+        <h2 class="dresscode-title">Дресс-код</h2>
+
+        <!-- Карусель фоток -->
+        <div class="carousel">
+          <div class="carousel-container">
+            <div class="carousel-slide active">
+              <img
+                src="assets/images/dress1.jpg"
+                alt=""
+                class="carousel-image"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/images/dress2.jpg"
+                alt=""
+                class="carousel-image"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/images/dress3.jpg"
+                alt=""
+                class="carousel-image"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/images/dress4.jpg"
+                alt=""
+                class="carousel-image"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="assets/images/dress5.jpg"
+                alt=""
+                class="carousel-image"
+              />
+            </div>
+          </div>
+          <button class="carousel-prev">‹</button>
+          <button class="carousel-next">›</button>
+          <div class="carousel-dots"></div>
+        </div>
+
+        <!-- Описание дресс-кода -->
+        <div class="dresscode-text">
+          <p class="dresscode-description">
+            Дорогие гости, просим вас придерживаться классического <br />
+            стиля в одежде:<br />
+            мужчины - в рубашках и брюках,<br />
+            женщины - в элегантных вечерних платьях.<br />
+            Возможны наряды любой <br />цветовой гаммы,<br />
+            однако просим сохранить белый цвет только для невесты.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Седьмая страница - фото -->
+    <section id="photo" class="screen photo-section">
+      <div class="photo-container">
+        <img src="assets/images/IMG_18731.1.jpg" class="wedding-photo" />
+      </div>
+    </section>
+
+    <!-- Восьмая страница - Подтверждение присутствия -->
+    <section id="rsvp" class="screen rsvp">
+      <div class="rsvp-content">
+        <h2 class="rsvp-title">
+          Очень ждем и будем рады видеть вас на нашей свадьбе!
+        </h2>
+        <h3 class="rsvp-subtitle">Подтвердите ваше присутствие:</h3>
+
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-group">
+            <div class="form-label">Имя и фамилия</div>
+            <input
+              type="text"
+              id="main-guest"
+              name="main_guest"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div class="guests-section">
+            <div class="form-label">Те, кто придут с вами</div>
+            <div class="counter-controls">
+              <button
+                type="button"
+                id="minus-btn"
+                class="counter-btn minus"
+                disabled
+              >
+                -
+              </button>
+              <span id="counter-value" class="counter-value">0</span>
+              <button type="button" id="plus-btn" class="counter-btn plus">
+                +
+              </button>
+            </div>
+            <div id="additional-guests" class="additional-guests">
+              <!-- Поля появятся здесь -->
+            </div>
+          </div>
+
+          <button type="submit" id="submit-btn" class="submit-btn">
+            Отправить!
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Девятая страница - Обратный отсчет -->
+    <section id="countdown" class="screen countdown">
+      <div class="countdown-overlay"></div>
+      <div class="countdown-content">
+        <h2 class="countdown-title">До свадьбы осталось:</h2>
+        <div class="countdown-timer">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">дней</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">часов</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">минут</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">секунд</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <audio id="bg-music" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="script.js"></script>
+
+<div id="music-toggle" class="music-toggle">▶︎ Включить музыку</div>
+</body>
+  </body>
+</html>
